@@ -46,11 +46,11 @@
 						</tr>
 						<tr class="fragment">
 							<th>May, 2022</th>
-							<td>Google Imagen</td>
+							<td>Google Imagen AI</td>
 						</tr>
 						<tr class="fragment">
 							<th>June, 2022</th>
-							<td><span class="star"></span>Github CoPilot, Big-Bench</td>
+							<td><span class="star"></span>Github CoPilot</td>
 						</tr>
 						<tr class="fragment">
 							<th>July, 2022</th>
@@ -99,16 +99,88 @@
 			<section>
 				<section>
 					<h2>What's this all about then ey?</h2>
+					<img class="fragment" src="assets/img/memes/its-all-llm.jpeg" />
 				</section>
 				<section>
-					<h2>Natual Language Processing (NLP)</h2>
-					<p>Unlocked the ability to process large amounts of textual data.</p>
-					<p>OpenAI's ChatGPT has made</p>
+					<h2>Language models</h2>
+					<img src="assets/img/text-to-llm-to-output.png" class="fragment" />
+					<ul>
+						<li class="fragment">Using Deep Learning, determine next-word probability analysing text data.</li>
+						<li class="fragment">Algorithms train model based on linguistic rules for context in natural language.</li>
+						<li class="fragment">Models use this to predict new sentences.</li>
+					</ul>
 				</section>
+				<section>
+					<h2>There are different types...</h2>
+					<ul>
+						<li class="fragment">
+							Traditional statistical (probabilty distribution) modeling:
+							<p>N-Gram, Unigram, Bidirectional (ML), Expotential, Neural Language (NN)</p>
+						</li>
+						<li class="fragment">
+							We used N-Gram in the early days, but most are Neural Language based now.
+						</li>
+					</ul>
+				</section>
+				<section>
+					<h2>N-Gram recap</h2>
+					<img src="assets/diagrams/ngram-examples.svg" class="fragment" />
+				</section>
+				<section>
+					<h2>Neural Network Based Models</h2>
+					<p>Use NN to predict probability of next word in a sequence.</p>
+					<p class="fragment">Captures complex linguistic structures, words & context.</p>
+					<ul>
+						<li class="fragment"><em>Large Language Models</em> (aka Generative AI Models) <br/> <span class="examples">Eg. GPT-4, GPT-3.5, BERT, RoBERTa, BLOOM, Claude</span></li>
+						<li class="fragment"><em>Fine Tuned Models</em> - Smaller training set for a specific task. <br/><span class="examples">Eg. Sentiment Analysis, Summarisation, Named Entity Recognition (NER)</span></li>
+						<li class="fragment"><em>Edge Models</em> - Tiny, ideal for mobile/IoT devices, no cloud.<br/><span class="examples">Eg. Google Translate, Tensorflow Lite, Pytorch Mobile</span></li>
+					</ul>
+					<p class="fragment">Unfortunately, most use ChatGPT for all the things right now.</p>
+				</section>
+				<section>
+					<h2>They vary in size...</h2>
+					<p class="fragment">We measure size in the <em class="heavy">number of parameters</em>.</p>
+					<ul>
+						<li class="fragment"><em>Large Language Models</em> - Gigabytes, some like GPT4 could be Petabytes. <br/> <span class="examples">Eg. GPT-4, GPT-3.5, BERT, RoBERTa, BLOOM, Claude</span></li>
+						<li class="fragment"><em>Fine Tuned Models</em> -  <br/><span class="examples">Eg. Sentiment Analysis, Summarisation, Named Entity Recognition (NER)</span></li>
+						<li class="fragment"><em>Edge Models</em> - <br/><span class="examples">Eg. Google Translate, Tensorflow Lite, Pytorch Mobile</span></li>
+					</ul>
+					<p class="fragment">But the physical size is still important for certain platforms.</p>
+				</section>
+				<section>
+					<h2>Under the hood...</h2>
+					<img class="fragment" src="assets/img/memes/transformer-transforms.gif"/>
+					<p class="fragment">Language models utilise a <em class="light">transformer model</em>.</p>
+					<p class="fragment">via Vaswani et al. paper, <a href="https://arxiv.org/abs/1706.03762">'Attention is All You Need'</a> in 2017.</p>					
+				</section>
+				<section>
+					<h2>Transformer Models</h2>					
+					<p class="fragment">Is the break-through for 'modern AI' as we know it.</p>
+					<p class="fragment">Concept of 'Attention' to understand important words & its relationships.</p>
+					<p class="fragment">Tokenise input to a sequence of words, encode words to numbers & convert into <em class="dark">embeddings</em>.</p>
+				</section>
+				<section>
+					<h2>An Embeddings example...</h2>					
+					<blockquote class="fragment smaller">
+As she said this, she looked down at her hands, and was surprised to find that she had put on one of the rabbit's little gloves while she was talking. 
+</blockquote>
+					<pre class="fragment">
+['As', ' she', ' said', ' this', ',', ' she', ' looked', ' down', ' at', 
+' her', ' hands', ',', ' and', ' was', ' surprised', ' to', ' find', 
+' that', ' she', 'had', ' put', ' on', ' one', ' of', ' the', ' rabbit', 
+"'s", ' little', ' gloves', ' while', ' she', ' was', ' talking', '.']
+					</pre>
+					<pre class="fragment">
+[ 2.49 0.22 -0.36 -1.55 0.22 -2.45 2.65 -1.6 -0.14 2.26
+...
+-1.26 -0.61 -0.61 -1.89 -1.87 -0.16 3.34 -2.67 0.42 -1.71 ]
+					</pre>
+				</section>
+			</section>
 			</section>
 			<section>
 				<section>
-					<h2>What are Language Models?</h2>						
+					<h2>Some Key Concepts</h2>						
 				</section>
 				<section>
 					<p>Machine learning model that can learn, understand &  process linguistics efficiently.</p>

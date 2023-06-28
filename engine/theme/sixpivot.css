@@ -22,10 +22,15 @@ section.has-light-background, section.has-light-background h1, section.has-light
 :root {
   --r-background-color: #191919;
   --r-main-font: Lato, sans-serif;
-  --r-main-font-size: 40px;
-  --r-main-timeline-size: 34px;
+  --r-main-font-size: 36px;
+  --r-example-font-size: 28px;
+  --r-blockquote-smaller-font-size: 28px;
+  --r-main-timeline-size: 32px;
   --r-main-resources-size: 28px;
   --r-main-color: #93a1a1;
+  --r-emphasis-light-color: #00AED8;
+  --r-emphasis-dark-color: #1B8BEB;
+  --r-emphasis-heavy-color: rgb(255, 0, 136);
   --r-block-margin: 20px;
   --r-heading-margin: 0 0 20px 0;
   --r-heading-font: League Gothic, Impact, sans-serif;
@@ -153,6 +158,18 @@ section.has-light-background, section.has-light-background h1, section.has-light
   font-style: italic;
 }
 
+.reveal em.light {
+  color: var(--r-emphasis-light-color);
+}
+
+.reveal em.dark {
+  color: var(--r-emphasis-dark-color);
+}
+
+.reveal em.heavy {
+  color: var(--r-emphasis-heavy-color);
+}
+
 .reveal ol,
 .reveal dl,
 .reveal ul {
@@ -204,6 +221,9 @@ section.has-light-background, section.has-light-background h1, section.has-light
   box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.2);
 }
 
+.reveal blockquote.smaller {
+  font-size: var(--r-blockquote-smaller-font-size);
+}
 .reveal blockquote p:first-child,
 .reveal blockquote p:last-child {
   display: inline-block;
@@ -253,6 +273,9 @@ section.has-light-background, section.has-light-background h1, section.has-light
 }
 .reveal .resources{
   font-size: var(--r-main-resources-size);
+}
+.reveal .examples{
+  font-size: var(--r-example-font-size);
 }
 .reveal .timeline th {
   text-align: right;
