@@ -141,11 +141,30 @@
 					<h2>They vary in size...</h2>
 					<p class="fragment">We measure size in the <em class="heavy">number of parameters</em>.</p>
 					<ul>
-						<li class="fragment"><em>Large Language Models</em> - Gigabytes, some like GPT4 could be Petabytes. <br/> <span class="examples">Eg. GPT-4, GPT-3.5, BERT, RoBERTa, BLOOM, Claude</span></li>
-						<li class="fragment"><em>Fine Tuned Models</em> -  <br/><span class="examples">Eg. Sentiment Analysis, Summarisation, Named Entity Recognition (NER)</span></li>
-						<li class="fragment"><em>Edge Models</em> - <br/><span class="examples">Eg. Google Translate, Tensorflow Lite, Pytorch Mobile</span></li>
+						<li class="fragment"><em>Large Language Models</em> - Billions of Parameters, ~TB to PB! <br/> <span class="examples">Eg. GPT-4, GPT-3.5, GPT-3(<em class="light">175B</em>, <em class="dark">800GB</em>), BERT, RoBERTa, BLOOM, Claude</span> <br/></li>						
+						<li class="fragment"><em>Fine Tuned Models</em> - Commonly 7B, 13B, 30B, 40B <br/><span class="examples">Eg. <code>vicuna-13B, alpaca-13B, llama-13B</code></span></li>
+						<li class="fragment"><em>Ultra Fine Tuned Model</em> - Rare 170B <br/><span class="examples">Eg. <code>bloom-176, tr11-176B-logs</code></span></li>
+						<li class="fragment"><em>Edge Models</em> - Problem domain specific & hardware specific.<br/><span class="examples">Eg. <code>mobileBERT</code></span></li>
 					</ul>
 					<p class="fragment">But the physical size is still important for certain platforms.</p>
+				</section>
+				<section>
+					<h2>Hardware Limitations...</h2>
+					<p class="fragment">Early days we were limited to CPUs computing our models.</p>
+					<p class="fragment">But GPUs have eclipsed the performance of CPUs.</p>
+					<p class="fragment">Consumer GPUs are limited to 24GB VRAM (NVIDIA 3090Ti/4090)</p>
+					<p class="fragment">Pick models carefully to balance hardware & accuracy.</p>
+					<p class="fragment">Most LLMs will be destined for the cloud, too big & expensive.</p>
+				</section>
+				<section>
+					<h2>Offside: Evolution of GPT...</h2>
+					<ul>
+						<li class="fragment">GPT-1: <em class="light">117M</em></li>
+						<li class="fragment">GPT-2: <em class="light">1.5B</em></li>
+						<li class="fragment">GPT-3: <em class="light">175B</em> <em class="dark">45TB</em></li>
+						<li class="fragment">GPT-3.5: <em class="light">175B</em></li>
+						<li class="fragment">GPT-4: <em class="light">1xxT</em></li>
+					</ul>
 				</section>
 				<section>
 					<h2>Under the hood...</h2>
@@ -165,16 +184,17 @@
 As she said this, she looked down at her hands, and was surprised to find that she had put on one of the rabbit's little gloves while she was talking. 
 </blockquote>
 					<pre class="fragment">
-['As', ' she', ' said', ' this', ',', ' she', ' looked', ' down', ' at', 
-' her', ' hands', ',', ' and', ' was', ' surprised', ' to', ' find', 
-' that', ' she', 'had', ' put', ' on', ' one', ' of', ' the', ' rabbit', 
-"'s", ' little', ' gloves', ' while', ' she', ' was', ' talking', '.']
+['▁As', '▁she', '▁said', '▁this', ',', '▁she', '▁looked', '▁down', '▁at',
+ '▁her', '▁hands', ',', '▁and', '▁was', '▁surprised', '▁to', '▁find', 
+ '▁that', '▁she', '▁had', '▁put', '▁on', '▁one', '▁of', '▁the', '▁rabbit',
+ "'", 's', '▁little', '▁gloves', '▁while', '▁she', '▁was', '▁talking', '.']
 					</pre>
 					<pre class="fragment">
-[ 2.49 0.22 -0.36 -1.55 0.22 -2.45 2.65 -1.6 -0.14 2.26
-...
--1.26 -0.61 -0.61 -1.89 -1.87 -0.16 3.34 -2.67 0.42 -1.71 ]
+[282, 255, 243, 48, 6, 255, 2299, 323, 44, 160, 1780, 6, 11, 47, 5597, 12, 
+ 253, 24, 255, 141, 474, 30, 80, 13, 8, 18383, 31, 7, 385, 16802, 298, 255, 
+ 47, 2508, 5, 1]
 					</pre>
+					<p>Let's try it out in <code class="example-location">examples/tokenize/quick-start.py</code></p>
 				</section>
 				<section>
 					<h2>Example: Embeddings</h2>

@@ -171,7 +171,13 @@ section.has-light-background, section.has-light-background h1, section.has-light
 .reveal em.heavy {
   color: var(--r-emphasis-heavy-color);
 }
-
+.reveal code.example-location {
+  font-size: var(--r-example-font-size);
+}
+.reveal code.example-location::before {
+  content: "\1f4C1";
+  vertical-align: center;
+}
 .reveal ol,
 .reveal dl,
 .reveal ul {
