@@ -1,0 +1,408 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+	
+	<meta name="description" content="Adventures in AI: Concepts & Language Models (2023)">
+	<meta name="author" content="Thushan Fernando">
+
+	<title>Adventures in AI: Concepts & Language Models (2023)</title>
+	<link rel="stylesheet" href="engine/reset.css">
+	<link rel="stylesheet" href="engine/reveal.css">
+	<link rel="stylesheet" href="engine/theme/sixpivot.css" id="theme">
+	<link rel="stylesheet" href="engine/plugin/highlight/monokai.css" id="highlight-theme">
+	<link rel="stylesheet" href="engine/2shan.css">
+</head>
+<body>
+	<div class="reveal">
+		<div class="slides">
+			<section data-markdown>
+				## Adventures in AI
+				## Concepts & Language Models
+				Thushan Fernando
+
+				![ChatGPT Enthusiast](assets/img/memes/chatgpt-enthusiast.jpg)
+
+				[@thushanfernando](https://twitter.com/thushanfernando)
+
+				[github.com/thushan](https://github.com/thushan)
+			</section>
+
+			<section>
+				<section>
+					<h2>Modern AI Evolution: 2022</h2>
+					<table class="timeline">
+						<tr class="fragment">
+							<th>Feb, 2022</th>
+							<td>DeepMind - Alpha Code</td>
+						</tr>
+						<tr class="fragment">
+							<th>Apr, 2022</th>
+							<td><span class="star"></span>OpenAI: Dall-E 2, Google PaLM (<em class="light">540B</em>)</td>
+						</tr>
+						<tr class="fragment">
+							<th>May, 2022</th>
+							<td>Google Imagen AI</td>
+						</tr>
+						<tr class="fragment">
+							<th>June, 2022</th>
+							<td><span class="star"></span>Github CoPilot</td>
+						</tr>
+						<tr class="fragment">
+							<th>July, 2022</th>
+							<td><span class="star"></span>Stability AI: Stability Diffusion</td>
+						</tr class="fragment">
+						<tr class="fragment">
+							<th>Sept, 2022</th>
+							<td><span class="star"></span>OpenAI: Whisper, Meta: Make a Video</td>
+						</tr>
+						<tr class="fragment">
+							<th>Oct, 2022</th>
+							<td>LangChain on Github</td>
+						</tr>
+						<tr class="fragment">
+							<th>Nov, 2022</th>
+							<td><span class="mind-blown"></span>OpenAI: ChatGPT</td>
+						</tr>
+					</table>
+				</section>
+				<section>
+					<h2>Modern AI Evolution: 2023</h2>
+					<table class="timeline">
+						<tr class="fragment">
+							<th>Feb, 2023</th>
+							<td>Meta: LLaMA (<em class="light">7-65B</em>)</td>
+						</tr>
+						<tr class="fragment">
+							<th>Mar, 2023</th>
+							<td><span class="mind-blown"></span>OpenAI: ChatGPT4, Stanford: Alpaca (<em class="light">13B</em>)</td>
+						</tr>
+						<tr class="fragment">
+							<th>Apr, 2023</th>
+							<td>UC Berkley: Vicuna (<em class="light">13B</em>)</td>
+						</tr>
+						<tr class="fragment">
+							<th>May, 2023</th>
+							<td>Google: PaLM 2</td>
+						</tr>
+						<tr class="fragment">
+							<th>June, 2023</th>
+							<td><span class="mind-blown"></span>Microsoft: Orca LLM, OpenLLaMA (<em class="light">13B</em>)</td>
+						</tr>
+					</table>
+				</section>
+			</section>
+			<section>
+				<section>
+					<h2>What's this all about then ey?</h2>
+					<img class="fragment" src="assets/img/memes/its-all-llm.jpeg" />
+				</section>
+				<section>
+					<h2>Language models</h2>
+					<img src="assets/img/text-to-llm-to-output.png" class="fragment" />
+					<ul>
+						<li class="fragment">Using Deep Learning, determine next-word probability analysing text data.</li>
+						<li class="fragment">Algorithms train model based on linguistic rules for context in natural language.</li>
+						<li class="fragment">Models use this to predict new sentences or sequences.</li>
+					</ul>
+				</section>
+				<section>
+					<h2>There are different types...</h2>
+					<ul>
+						<li class="fragment">
+							Traditional statistical (probability distribution) modeling:
+							<p>N-Gram, Unigram, Bidirectional (ML), Expotential, Neural Language (NN)</p>
+						</li>
+						<li class="fragment">
+							We used N-Gram in the early days, but most are Neural Language based now.
+						</li>
+					</ul>
+				</section>
+				<section>
+					<h2>N-Gram recap</h2>
+					<img src="assets/diagrams/ngram-examples.svg" class="fragment" />
+				</section>
+				<section>
+					<h2>Neural Network Based Models</h2>
+					<p>Use NN to predict probability of next word in a sequence.</p>
+					<p class="fragment">Captures complex linguistic structures, words & context.</p>
+					<ul>
+						<li class="fragment"><em>Large Language Models</em> (aka Generative AI Models) <br/> <span class="examples">Eg. GPT-4, GPT-3.5, BERT, RoBERTa, BLOOM, Claude</span></li>
+						<li class="fragment"><em>Fine Tuned Models</em> - Smaller training set for a specific task. <br/><span class="examples">Eg. Sentiment Analysis, Summarisation, Named Entity Recognition (NER)</span></li>
+						<li class="fragment"><em>Edge Models</em> - Tiny, ideal for mobile/IoT devices, no cloud.<br/><span class="examples">Eg. Google Translate, Tensorflow Lite, Pytorch Mobile</span></li>
+					</ul>
+					<p class="fragment">Unfortunately, most use ChatGPT for all the things right now.</p>
+				</section>
+				<section>
+					<h2>They vary in size...</h2>
+					<p class="fragment">We measure size in the <em class="heavy">number of parameters</em>.</p>
+					<p>
+						<img class="fragment" src="assets/diagrams/nn-weights-example.svg"/>
+					</p>
+					<p class="fragment">Weights & Biases in the NN are called <em class="heavy">Parameters</em>.</p>
+				</section>
+				<section>
+						<h2>Some sizes for sizing...</h2>
+					<ul>
+						<li class="fragment"><em>Large Language Models</em> - Billions of <em class="light">Parameters</em>, <em class="dark">TB</em> to <em class="dark">PB</em>! <br/> <span class="examples">Eg. GPT-4, GPT-3.5, GPT-3(<em class="light">175B</em>, <em class="dark">800GB</em>), BERT, RoBERTa, BLOOM, Claude</span> <br/></li>						
+						<li class="fragment"><em>Fine Tuned Models</em> - Commonly <em class="light">7B, 13B, 30B, 40B</em> <br/><span class="examples">Eg. <code>vicuna-13B, alpaca-13B, llama-13B</code></span></li>
+						<li class="fragment"><em>Ultra Fine Tuned Model</em> - Rare <em class="light">P170B</em> <br/><span class="examples">Eg. <code>bloom-176, tr11-176B-logs</code></span></li>
+						<li class="fragment"><em>Edge Models</em> - Problem domain specific & hardware specific.<br/><span class="examples">Eg. <code>mobileBERT</code></span></li>
+					</ul>
+					<p class="fragment">But the physical size is still important for certain platforms.</p>
+				</section>
+				<section>
+					<h2>Hardware Limitations...</h2>
+					<p class="fragment">Early days we were limited to CPUs computing models.</p>
+					<p class="fragment">But GPUs have eclipsed the performance of CPUs.</p>
+					<p class="fragment">Consumer GPUs are limited to 24GB VRAM. <br>(Eg. NVIDIA 3090Ti/4090)</p>
+					<p class="fragment">Models 'forget' things to save memory on such hardware.</p>
+					<p class="fragment">Pick models carefully to balance hardware & accuracy.</p>
+					<p class="fragment">Most LLMs will be destined for the cloud, too big & expensive.</p>
+				</section>
+				<section>
+					<h2>Offside: Evolution of GPT...</h2>
+					<ul>
+						<li class="fragment">GPT-1: <em class="light">117M</em></li>
+						<li class="fragment">GPT-2: <em class="light">1.5B</em></li>
+						<li class="fragment">GPT-3: <em class="light">175B</em> <em class="dark">45TB</em></li>
+						<li class="fragment">GPT-3.5: <em class="light">175B</em></li>
+						<li class="fragment">GPT-4: <em class="light">1xxT</em></li>
+					</ul>
+				</section>
+				<section>
+					<h2>Under the hood...</h2>
+					<img class="fragment" src="assets/img/memes/transformer-transforms.gif"/>
+					<p class="fragment">Language models utilise a <em class="light">transformer model</em>.</p>
+					<p class="fragment">via Vaswani et al. paper, <a href="https://arxiv.org/abs/1706.03762">'Attention is All You Need'</a> in 2017.</p>					
+				</section>
+				<section>
+					<h2>Transformer Models</h2>					
+					<p class="fragment">Is the break-through for 'modern AI' as we know it.</p>
+					<p class="fragment">Concept of 'Attention' to understand important words & its relationships.</p>
+					<p class="fragment">Tokenise input to a sequence of words, encode words to numbers & convert into <em class="dark">embeddings</em>.</p>
+				</section>
+				<section>
+					<h2>An Embeddings example...</h2>					
+					<blockquote class="fragment smaller">
+As she said this, she looked down at her hands, and was surprised to find that she had put on one of the rabbit's little gloves while she was talking. 
+</blockquote>
+					<pre class="fragment">
+['▁As', '▁she', '▁said', '▁this', ',', '▁she', '▁looked', '▁down', '▁at',
+ '▁her', '▁hands', ',', '▁and', '▁was', '▁surprised', '▁to', '▁find', 
+ '▁that', '▁she', '▁had', '▁put', '▁on', '▁one', '▁of', '▁the', '▁rabbit',
+ "'", 's', '▁little', '▁gloves', '▁while', '▁she', '▁was', '▁talking', '.']
+					</pre>
+					<pre class="fragment">
+[282, 255, 243, 48, 6, 255, 2299, 323, 44, 160, 1780, 6, 11, 47, 5597, 12, 
+ 253, 24, 255, 141, 474, 30, 80, 13, 8, 18383, 31, 7, 385, 16802, 298, 255, 
+ 47, 2508, 5, 1]
+					</pre>
+					<p class="fragment">Let's try it out in <code class="example-location">examples/tokenize/quick-start.py</code></p>
+				</section>
+				<section>
+					<h2>Example: Embeddings</h2>
+					 <blockquote class="example-meta">
+						<table>
+							<tr>
+								<th>Example:</th>
+								<td><code class="example-location">examples/embeddings/quick-start.py</code></td>
+							</tr>
+							<tr>
+								<th>Model:</th>
+								<td><a href="https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2">all-MiniLM-L6-v2</a></td>
+							</tr>
+							<tr>
+								<th>Notes:</th>
+								<td>Maps sentences & paragraphs to a <em>384 dimensional dense vector space</em>.</td>
+							</tr>
+							<tr>
+								<th>Usage:</th>
+								<td>Clustering tasks like similarity, semantic search.</td>
+							</tr>
+							<tr>
+								<th>Example:</th>
+								<td>
+									<table>
+										<tr>
+											<th>Source</th>
+											<td>That is a happy person</td>
+										</tr>
+										<tr>
+											<th>Compare</th>
+											<td>
+												That is a happy dog <br/>
+												That is a very happy person <br/>
+												Today is a sunny day
+											</td>
+										</tr>
+										<tr>
+											<th>Matcher</th>
+											<td><pre>
+[
+  0.6945773363113403,
+  0.9429150223731995,
+  0.256876140832901
+]</pre>
+											</td>
+										</tr>
+									</table>
+								</td>
+							</tr>
+						</table>
+					 </blockquote>
+				</section>
+			</section>
+			</section>
+			<section>
+				<section>
+					<h2>Where do we find models?</h2>
+					<p>
+						<img class="fragment fade-in-then-out" src="assets/img/zoolander-models.jpeg"/><br/>
+						<span class="fragment fade-up">
+							<img src="assets/img/hugging-face.png"/> <br/>
+							<a href="https://huggingface.co/">huggingface.co</a>
+						</span>
+					</p>
+				</section>
+				<section>
+					<h2>Hugging Face: AI Community Hub</h2>
+					<p>Building, training and sharing (open source) models.</p>
+					<p class="fragment">
+						Explore a treasure trove of the latest models for:
+						<ul class="fragment">
+							<li><em>Computer Vision</em> - Object detection, Image / Video Classification</li>
+							<li><em>NLP</em> - Token / Text Classifiers, Summarisation, Similarity, Translation, Conversational</li>
+							<li><em>Audio</em> - Audio Classification, Text to Speech, Speech Recognition</li>
+						</ul>
+					</p>
+				</section>
+				<section>
+					<h2>Some models are...</h2>
+					<p class="fragment fade-in">
+						<img src="assets/img/zoolander-good-looking-model.jpg"/><br/>
+						Really really really ridiculously good looking... to try out!
+					</p>
+				</section>
+			</section>
+			<section>
+				<section>
+					<h2>How do we try them out?</h2>
+					<p class="fragment fade-up">
+						<img src="assets/img/langchain.png"/> <br/>
+						<a href="https://python.langchain.com/">python.langchain.com</a>
+					</p>
+				</section>
+				<section>
+					<h2>LangChain + Python (or Javascript)</h2>
+					<p class="fragment">
+						Abstraction for foundational models, manage prompts, manage memory, external data & tasks via agents.
+					</p>
+					<p class="fragment">
+						Core idea is to be able to 'chain' different components to make more advanced applications by combining LMs.
+					</p>
+					<p class="fragment">
+						Output of one chain, can be the input for another chain - like a data pipeline.
+					</p>
+					<p class="fragment">
+						We'll learn more in <em class="heavy">the next session</em>...
+					</p>
+				</section>
+			</section>
+			<section>
+				<section>
+					<h2>Interesting Projects...</h2>
+					<p class="fragment">Here are some interesting projects & ideas to keep tabs on...</p>
+				</section>
+				<section>
+					<h2>LLaMA.cpp</h2>
+					<img src="assets/img/llamacpp.png" /> <br>
+					<a href="https://github.com/ggerganov/llama.cpp">github.com/ggerganov/llama.cpp</a>
+					<p>Runs Facebook's LLaMA model using 4bit quantization on commodity hardware - like a Macbook, for Shaw!</p>
+					<small>with AVX, AVX2, AVX512 on x86; Apple Silicon support & GPU support added recently too.</small>
+				</section>
+				<section>
+					<h2>wHISper.cpp</h2>
+					<img src="assets/img/whispercpp.jpeg" /> <br>
+					<a href="https://github.com/ggerganov/whisper.cpp">github.com/ggerganov/whisper.cpp</a>
+					<p>Insanely optimised version of OpenAI's Whisper automatic speech recognition (ASR) engine.</p>
+					<small>with AVX on x86; Apple Silicon support & *ZERO* memory allocation.</small>
+				</section>
+				<section>
+					<h2>LangChain</h2>
+					<img src="assets/img/langchain-header.jpeg" /> <br>
+					<a href="https://github.com/hwchase17/langchain/">github.com/hwchase17/langchain</a>
+					<p>Excellent foundational abstraction (in Python) for managing LMs, Agents, Chatbots etc.</p>
+					<small>We'll use this in our next session for <em class="heavy">local-gpt</em>.</small>
+				</section>
+				<section>
+					<h2>Chroma</h2>
+					<img src="assets/img/chroma.png" /> <br>
+					<a href="https://github.com/chroma-core/chroma">github.com/chroma-core/chroma</a>
+					<p>Awesome in memory embeddings database in Python to compliment LangChain.</p>
+					<small>We'll use this in our next session for <em class="heavy">local-gpt</em>.</small>
+				</section>
+			</section>
+			<section>
+				<section>
+					<h2>Learning Resources</h2>
+					<ul class="resources">
+						<li><a href="https://www.cloudskillsboost.google/course_templates/536">Introduction to Generative AI</a> - Google</li>
+						<li><a href="https://www.deeplearning.ai/short-courses/langchain-for-llm-application-development/">LangChain for LLM Application Development</a> - with Harrison (creator!)</li>
+						<li><a href="https://www.coursera.org/learn/introduction-to-large-language-models">Coursera: Introduction to Large Language Models</a> - via Google Cloud</li>
+						<li><a href="https://huggingface.co/learn/nlp-course/chapter1/1">Hugging Face Courseware</a> - for NLP via Hugging Face</li>
+					</ul>
+				</section>
+				<section>
+					<h2>Interesting Papers</h2>
+					<ul class="resources">
+						<li class="star"><a href="https://arxiv.org/abs/1706.03762">Attention Is All You Need</a> (2017)</li>
+						<li><a href="https://s3-us-west-2.amazonaws.com/openai-assets/research-covers/language-unsupervised/language_understanding_paper.pdf">Improving Language Understanding by Generative Pre-Training</a> (2019)</li>
+						<li><a href="https://arxiv.org/abs/1810.04805">BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding</a> (2018)</li>
+						<li><a href="https://arxiv.org/abs/2304.00612">Eight Things to Know about Large Language Models</a> (2023)</li>
+						<li class="mind-blown"><a href="https://arxiv.org/pdf/2306.02707.pdf">Orca: Progressive Learning from Complex Explanation Traces of GPT-4</a> (2023)</li>
+					</ul>
+				</section>
+			</section>
+		</div>
+	</div>
+
+	<script src="engine/reveal.js"></script>
+	<script src="engine/plugin/chart/chart.min.js"></script>
+	<script src="engine/plugin/chart/plugin.js"></script>
+	<script src="engine/plugin/chalkboard/plugin.js"></script>
+	<script src="engine/plugin/notes/notes.js"></script>
+	<script src="engine/plugin/markdown/markdown.js"></script>
+	<script src="engine/plugin/highlight/highlight.js"></script>
+	<script>
+		Reveal.initialize({
+			hash: true,
+			chart: {
+				defaults: {
+					global: {
+						title: { fontColor: "#FFF" },
+						legend: {
+							labels: { fontColor: "#FFF" },
+						},
+					},
+					scale: {
+						scaleLabel: { fontColor: "#FFF" },
+						gridLines: { color: "#FFF", zeroLineColor: "#FFF" },
+						ticks: { fontColor: "#FFF" },
+					}
+				},
+				line: { borderColor: ["rgba(20,220,220,.8)", "rgba(220,120,120,.8)", "rgba(20,120,220,.8)"], "borderDash": [[5, 10], [0, 0]] },
+				bar: { backgroundColor: ["rgba(20,220,220,.8)", "rgba(220,120,120,.8)", "rgba(20,120,220,.8)"] },
+				pie: { backgroundColor: [["rgba(0,0,0,.8)", "rgba(220,20,20,.8)", "rgba(20,220,20,.8)", "rgba(220,220,20,.8)", "rgba(20,20,220,.8)"]] },
+				radar: { borderColor: ["rgba(20,220,220,.8)", "rgba(220,120,120,.8)", "rgba(20,120,220,.8)"] },
+			},
+			plugins: [RevealMarkdown, RevealHighlight, RevealNotes, RevealChart, RevealChalkboard]
+		});
+	</script>
+</body>
+
+</html>

@@ -1,0 +1,9 @@
+transformers
+huggingface-hub
+
+torch
+sentencepiece
+pandas
+requests
+colorama
+python-dotenv
