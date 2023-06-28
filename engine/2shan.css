@@ -63,14 +63,6 @@ a.learn-code {
     list-style-type: '👉';
     padding-inline-start: 1ch;
 }
-.reveal .resources .mind-blown {
-    list-style-type: "🤯";
-    padding-inline-start: 1ch;
-}
-.reveal .resources .star {
-    list-style-type: "⭐";
-    padding-inline-start: 1ch;
-}
 .reveal .mind-blown::before {
     content: "🤯";
 }
