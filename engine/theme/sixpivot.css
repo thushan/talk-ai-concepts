@@ -25,6 +25,7 @@ section.has-light-background, section.has-light-background h1, section.has-light
   --r-main-font-size: 36px;
   --r-example-font-size: 28px;
   --r-example-meta-font-size: 28px;
+  --r-example-meta-pre-colour: #333232;
   --r-blockquote-smaller-font-size: 28px;
   --r-main-timeline-size: 32px;
   --r-main-resources-size: 28px;
@@ -235,6 +236,11 @@ section.has-light-background, section.has-light-background h1, section.has-light
 }
 .reveal blockquote.example-meta th {
   text-align: right;
+}
+.reveal blockquote.example-meta pre {
+  background-color: var(--r-example-meta-pre-colour);
+  padding: 5px;
+  border-radius: 5px;
 }
 .reveal blockquote.example-meta a {
   text-decoration: underline dotted;
